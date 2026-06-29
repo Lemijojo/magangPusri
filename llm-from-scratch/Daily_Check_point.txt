@@ -1,0 +1,100 @@
+Week 1
+
+*DAILY CHECK-IN
+Studen guide Ironman*
+##############
+
+*Progress*
+-Mempelajari materi dari https://github.com/angelos-p/llm-  from-scratch
+-Membuat PPT berjudul LLM From Scratch
+Persentasi terkait  https://github.com/angelos-p/llm-from-scratch
+
+*Plan*
+Memahami apa itu tokenisasi
+Menghitung total kata pada dataset dengan code
+
+*Blocker*
+Banyak istilah dalam LLM yang dibelum dipahami
+
+Week 1
+
+*DAILY CHECK-IN
+Studen guide Ironman*
+##############
+
+*Progress*
+-Mempelajari dan memahami apa itu konsep tokenisasi dari dokumen
+-Menghitung total kata dan karakter pada dataset shakespeare.txt dengan kode Python
+
+
+*Plan*
+-Membangun fungsi encode() dan decode() tingkat karakter menggunakan dictionary Python (stoi dan itos).
+
+*Blocker*
+-Kendala dalam mencari dataset alternatif yang memiliki format teks polos (.txt) agar bisa langsung dibaca oleh fungsi open().read()
+
+Week 2 day 1
+
+*DAILY CHECK-IN*
+##############
+student-guide-ironman
+*Progress*
+
+- Membangun fungsi encode() dan decode() tingkat karakter menggunakan dictionary Python (stoi dan itos).
+
+*Plan*
+
+- Mempelajari konsep dasar PyTorch yang dibutuhkan untuk proyek ini (Tensor, Embeddings, dan Loss).
+
+*Blocker*
+
+- Perlu adaptasi dengan cara kerja Tensor dan operasi dimensi matriks di PyTorch.
+
+Week 2 Day 2
+
+*DAILY CHECK-IN*
+##############
+student-guide-ironman
+*Progress*
+
+-  Mempelajari konsep dasar PyTorch yang dibutuhkan untuk proyek ini (Tensor, Embeddings, dan Loss).
+
+*Plan*
+
+-Mempelajari cara kerja fungsi nn.Embedding di PyTorch untuk memetakan token ID menjadi vektor.
+
+*Blocker*
+
+- lebih extra dalam memahami konsep pytorch
+
+Week 2 day 3
+
+*DAILY CHECK-IN*
+##############
+student-guide-ironman
+*Progress*
+
+-  Membaca dokumentasi dasar pytorch tentang fungsi embedding agar memahami bagaiamna token ID disusun menjadi vektor
+
+*Plan*
+
+-Menguji implementasi embedding
+
+*Blocker*
+-banyak konsep yang baru untuk dipahami
+-
+
+*DAILY CHECK-IN*
+Week 2 Day 4
+##############
+student-guide-ironman
+*Progress*
+
+- Memahami konsep pemisahan data train,alidation,split  dan alur kerja Cross-entropy loss pada pytorch
+
+*Plan*
+
+ -Membuat model menggunakan nn.Embedding dengan  vocab_size 65 dan lapisan output nn.Linear
+
+*Blocker*
+-
