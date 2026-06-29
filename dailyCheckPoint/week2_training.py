@@ -1,16 +1,14 @@
 import torch
 import torch.nn as nn
 
-# =============================================================
-# SETUP: Baca teks dan buat kamus huruf <-> angka
-# =============================================================
+
 text = open("data/shakespeare.txt").read()
 
 # Kumpulkan semua karakter unik yang ada di teks
 chars = sorted(set(text))
 vocab_size = len(chars)
-stoi = {c: i for i, c in enumerate(chars)}  # huruf ke angka
-itos = {i: c for c, i in stoi.items()}       # angka ke huruf
+stoi = {c: i for i, c in enumerate(chars)} 
+itos = {i: c for c, i in stoi.items()}       
 
 def encode(s):
     return [stoi[c] for c in s]
@@ -22,9 +20,7 @@ def decode(ids):
 device = "cuda" if torch.cuda.is_available() else "cpu"
 print("Menggunakan device:", device)
 
-# =============================================================
-# PENGATURAN (Hyperparameter)
-# =============================================================
+# pengaturan parameter
 BLOCK_SIZE    = 8     # model melihat 8 karakter ke belakang
 BATCH_SIZE    = 32    # belajar dari 32 contoh sekaligus
 MAX_STEPS     = 500   # total langkah training
@@ -32,10 +28,8 @@ EVAL_EVERY    = 25    # catat log setiap 25 langkah
 LEARNING_RATE = 1e-2
 EMBED_DIM     = 32    # ukuran vektor tiap karakter
 
-# =============================================================
 # BUILD 1: TRAIN / VALIDATION SPLIT
 # 90% data untuk belajar, 10% untuk evaluasi
-# =============================================================
 data = torch.tensor(encode(text), dtype=torch.long)
 
 n          = int(0.9 * len(data))
@@ -47,11 +41,8 @@ print("  Total :", len(data))
 print("  Train :", len(train_data))
 print("  Val   :", len(val_data))
 
-# =============================================================
-# BUILD 2: FUNGSI GET_BATCH
+# BUILD 2: fungsi GET_BATCH
 # Ambil potongan teks acak sebagai soal (x) dan jawaban (y)
-# Contoh: x = [H,e,l,l]  →  y = [e,l,l,o]
-# =============================================================
 def get_batch(split):
     # Pilih data train atau val
     if split == "train":
@@ -79,11 +70,9 @@ print("\nBentuk tensor:")
 print("  x (input) :", xb.shape)
 print("  y (target):", yb.shape)
 
-# =============================================================
 # BUILD 3: MODEL BAHASA SEDERHANA
 # Embedding: ubah angka → vektor
 # Linear   : ubah vektor → skor untuk tiap karakter
-# =============================================================
 class SimpleLM(nn.Module):
     def __init__(self):
         super().__init__()
@@ -117,9 +106,8 @@ model = SimpleLM().to(device)
 total_params = sum(p.numel() for p in model.parameters())
 print("\nModel berhasil dibuat! Total parameter:", total_params)
 
-# =============================================================
+
 # BUILD 5: TRAINING LOOP + STEP-BY-STEP LOGGING
-# =============================================================
 optimizer = torch.optim.AdamW(model.parameters(), lr=LEARNING_RATE)
 
 # Fungsi bantu untuk menghitung rata-rata loss (tanpa update model)
@@ -164,9 +152,8 @@ for step in range(MAX_STEPS + 1):
     loss.backward()        # hitung arah perbaikan
     optimizer.step()       # terapkan perbaikan
 
-# =============================================================
+
 # SUBMIT: Initial loss dan final loss
-# =============================================================
 initial_loss = log[0]["train"]
 final_loss   = log[-1]["train"]
 drop = initial_loss - final_loss
@@ -190,9 +177,9 @@ print(f"Penurunan  : {drop:.4f} ({pct:.1f}%)")
 print("Status     : SELESAI")
 print("=" * 45)
 
-# =============================================================
+
 # SUBMIT: Tensor shape notes
-# =============================================================
+#----------------------------------------------------------------
 print("""
 --- CATATAN TENSOR SHAPES ---
 x input       : [32, 8]     -> 32 sampel, tiap 8 token
