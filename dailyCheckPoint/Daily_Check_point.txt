@@ -98,3 +98,19 @@ student-guide-ironman
 
 *Blocker*
 -
+
+*DAILY CHECK-IN*
+Week 3 Day 1
+##############
+student-guide-ironman
+*Progress*
+
+  -Menyelesaikan Submit week 2
+  -Push repo ke github https://github.com/Lemijojo/magangPusri.git
+
+*Plan*
+
+ -Mempelajari istilah yang ada di docs 2 tentang Transformer
+
+*Blocker*
+-
