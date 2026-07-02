@@ -1,3 +1,12 @@
+*DAILY CHECK-IN*
+##############
+*Progress*
+- isi dengan apa yg dikerjakan kemaren
+*Plan*
+- isi dengan apa yg akan dikerjakan hari ini
+*Blocker*
+- isi dengan kendala2 yang sedang dihadapi
+
 Week 1
 
 *DAILY CHECK-IN
@@ -114,3 +123,34 @@ student-guide-ironman
 
 *Blocker*
 -
+
+Week 3 Day 3
+ DAILY CHECK-IN 
+Progress
+
+    Mempelajari dan memahami istilah-istilah di docs 2 tentang arsitektur Transformer (seperti self-attention, MLP, residual connections, dan layer normalization).
+
+Plan
+
+    Membuat file model.py
+    Mulai menulis kode untuk Token embedding dan Positional embedding.
+
+Blocker
+
+  -
+
+
+*Week 3 Day 4*
+
+  - Membuat file model.py dan mengimplementasikan 
+    kode untuk Token embedding serta Positional embedding.
+
+Plan
+
+  - Melanjutkan penulisan kode untuk mekanisme 
+    Causal Self-Attention dan Multi-head attention.
+
+Blocker
+
+  - 
+  
